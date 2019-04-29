@@ -1,0 +1,27 @@
+{
+    "name": "songlijian/php-apollo-client",
+    "description": "apollo client for php",
+    "require": {
+        "php": "~7.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "songlijian",
+            "email": "songlijian17@163.com"
+        }
+    ],
+    "homepage": "http://gitlab.uxin-it.com/php/apollo-client",
+
+    "autoload": {
+        "psr-4": {
+            "Org\\Apollo\\Client\\": "src/"
+        }
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    }
+}

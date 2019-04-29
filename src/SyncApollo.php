@@ -76,10 +76,9 @@ class SyncApollo extends Action{
         $apolloOb->save_dir = $this->saveDir;
         ini_set('memory_limit','256M');
         $error = $apolloOb->start($callback); 
-        if(!$error){
-            return true;
-        }else{
+        if($error){
             call_user_func($this->logClassOb,$error);
         }
+        return true;
     }
 }

@@ -30,9 +30,17 @@ class SyncApollo extends Action{
 
     public $findDir = '*';
 
+    public $route = 'syncApollo';
 
     public function run(){
 
+        $cmd = 'ps aux|grep '.$this->route .' | grep -v "grep"|wc -l';
+        $ret = shell_exec("$cmd");
+        $ret = rtrim($ret, "\r\n");
+        $ret = trim($ret);
+        if($ret !== "0") {
+            return true;
+        }
         $callback = function () {
 
             $list = glob($this->saveDir.DIRECTORY_SEPARATOR.$this->apolloConfig);
